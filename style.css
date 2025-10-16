@@ -1,0 +1,263 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body */
+    body {
+      font-family:'Times New Roman', Times, serif;
+      color: #f5f5f5;
+      background-color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      width: 100%;
+      background-color: #111;
+      box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #00bcd4;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Nav Links */
+    .nav-links a {
+      position: relative;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      font-size: 1px;
+      height: 2px;
+      background: linear-gradient(90deg, #00bcd4, #ff00ff, #00ff99);
+      transition: width 0.4s ease;
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(0,188,212,0.6);
+    }
+
+    .nav-links a:hover {
+      color: #00bcd4;
+      transform: translateY(-2px);
+      text-shadow: 0 0 8px rgba(0,188,212,0.6);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #111 40%, #1a1a1a);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Image Container */
+    .image-container {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto 2rem;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 40px rgba(0, 188, 212, 0.4);
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 2;
+    }
+
+    .image-container::before {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: conic-gradient(#00bcd4, #ff00ff, #00ff99, #00bcd4);
+      animation: rotateGlow 3s linear infinite;
+      z-index: 1;
+      filter: blur(8px);
+    }
+
+    @keyframes rotateGlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(0, 188, 212, 0.4); }
+      50% { box-shadow: 0 0 35px rgba(0, 188, 212, 0.8); }
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background-color: #0a0a0a;
+      z-index: 1;
+    }
+
+    /* Animation */
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .highlight {
+      color: #00bcd4;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 3s;
+    }
+     .hero-content q {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-top: 0.3rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 3s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Button */
+    .btn {
+      text-decoration: none;
+      background: linear-gradient(270deg, #00bcd4, #ff00ff, #00ff99, #00bcd4);
+      background-size: 400% 400%;
+      color: #111;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      animation: gradientMove 6s ease infinite;
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+      transition: all 0.4s ease;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75px;
+      width: 50px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: skewX(-20deg);
+      transition: 0.6s;
+    }
+
+    .btn:hover::after {
+      left: 130%;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 188, 212, 0.8), 0 0 50px rgba(255, 0, 255, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #111;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2rem; }
+      .hero-content p { font-size: 1rem; }
+      .hero-content q { font-size: 1.1rem; }
+      .image-container { width: 140px; height: 140px; }
+      .image-container::before { width: 180px; height: 180px; }
+      .image-container::after { width: 150px; height: 150px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 { font-size: 1.7rem; }
+      .hero-content p { font-size: 1rem; }
+      .hero-content q { font-size: 0.9rem; }
+      .btn { padding: 0.6rem 1.4rem; font-size: 0.9rem; }
+    }

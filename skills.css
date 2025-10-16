@@ -1,0 +1,138 @@
+    *
+    { margin:0; padding:0; box-sizing:border-box; }
+
+    /* Body */
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #0a0a0a;
+      color: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      width: 100%;
+      background-color: #111;
+      box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo { font-size:1.6rem; font-weight:600; color:#00bcd4; }
+
+    .nav-links {
+      list-style:none;
+      display:flex;
+      gap:1.7rem;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a {
+      text-decoration:none;
+      color:#ddd;
+      font-weight:500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover { color:#00bcd4; }
+
+    /* Hero Section */
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg,#111 40%,#1a1a1a);
+      text-align: center;
+      padding: 4rem 2rem;
+      flex-direction: column;
+    }
+
+    /* Section Header */
+    .section-title {
+      font-size: 2rem;
+      color: #00bcd4;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px #00bcd4;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 50%;
+      height: 2px;
+      background: #00bcd4;
+      position: absolute;
+      left: 25%;
+      bottom: -10px;
+      border-radius: 2px;
+    }
+
+    /* Skills Container */
+    .skills-container {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Skill */
+    .skill {
+      text-align: left;
+    }
+
+    .skill h3 {
+      color:#00bcd4;
+      margin-bottom:0.5rem;
+    }
+
+    .progress-bar {
+      background-color:#222;
+      border-radius: 25px;
+      overflow:hidden;
+      height: 20px;
+      box-shadow: 0 0 10px rgba(0,188,212,0.2) inset;
+    }
+
+    .progress {
+      height:100%;
+      background: #00bcd4;
+      width:0;
+      animation: loadSkill 2s forwards;
+      border-radius: 25px;
+    }
+
+    @keyframes loadSkill {
+      to { width: var(--skill-width); }
+    }
+
+    /* Footer */
+    footer {
+      text-align:center;
+      padding:1rem 0;
+      background-color:#111;
+      font-size:0.9rem;
+      color:#aaa;
+    }
+
+    /* Responsive */
+    @media (max-width:768px){
+      .skills-container{text-align:center;}
+      .skill h3{text-align:left;}
+    }
