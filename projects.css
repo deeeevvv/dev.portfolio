@@ -18,7 +18,7 @@
       background-color: #111;
       box-shadow: 0 2px 10px rgba(255,255,255,0.05);
     }
-
+      
     .navbar {
       max-width: 1200px;
       margin: auto;
@@ -30,25 +30,45 @@
     }
 
     .logo { font-size:1.6rem; font-weight:600; color:#00bcd4; }
-
     .nav-links {
-      list-style:none;
-      display:flex;
-      gap:2rem;
-      flex-wrap:wrap;
-      justify-content:center;
-      align-items:center;
-      transition: all 0.3s ease;
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
     .nav-links a {
-      text-decoration:none;
-      color:#ddd;
-      font-weight:500;
-      transition: color 0.3s ease;
+      position: relative;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
-    .nav-links a:hover { color:#00bcd4; }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      font-size: 1px;
+      height: 2px;
+      background: linear-gradient(90deg, #00bcd4, #ff00ff, #00ff99);
+      transition: width 0.4s ease;
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(0,188,212,0.6);
+    }
+
+    .nav-links a:hover {
+      color: #00bcd4;
+      transform: translateY(-2px);
+      text-shadow: 0 0 8px rgba(0,188,212,0.6);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
 
     /* Hero Section */
     .hero {
