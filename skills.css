@@ -34,7 +34,7 @@
       .nav-links {
       list-style: none;
       display: flex;
-      gap: 1.7rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -156,4 +156,5 @@
     @media (max-width:768px){
       .skills-container{text-align:center;}
       .skill h3{text-align:left;}
+
     }
